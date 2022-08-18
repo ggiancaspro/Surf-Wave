@@ -1,0 +1,417 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    background-image: linear-gradient(180deg, #FAD961 19%, #F76B1C 62%, #74c4c3 100%);
+ }
+
+/*--------------------------------------------INDEX--------------------------------------------*/
+
+
+/*********************************************HEADER*********************************************/
+
+.encabezado {
+    background-image: url("../img/sand.jpg");
+    background-position: center;
+    height: 60vh;
+    width: 100%;
+    position: relative;
+    opacity: 75%;
+    grid-area: header;
+}
+
+.encabezado div {
+    height: 10rem;
+    width: 50rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 3px 3px gray;
+}
+
+header div h1 {
+    font-size: 10rem;
+}
+
+.subTitulo {
+    font-size: 4rem;
+}
+
+/* ANIMACIONES */
+
+/* TITULO */
+@keyframes text {
+    0% {
+        opacity: 0;
+      }    
+      100% {
+        opacity: 100;
+      }      
+}
+
+h1 {
+    animation-name: text;
+    animation-duration: 1s;
+}
+
+
+
+/* SUBTITULO */
+@keyframes texto {
+      0% {
+        opacity: 0;
+      }    
+      100% {
+        opacity: 100;
+      }      
+}
+
+.subTitulo {
+    animation-name: texto;
+    animation-duration: 3s;
+}
+
+
+
+/****************************************NAV************************************* */
+
+nav {
+    background-color: rgba(255, 217, 0, 0.625);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    grid-area: nav;
+    cursor: pointer;
+}
+
+nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    margin: 3rem;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: black;
+}
+
+/**************************** CONTENIDO PRINCIPAL***************************** */
+
+
+
+section {
+    margin: 1rem;
+    padding: 5rem;
+
+    
+    box-shadow: 9px 9px 14px -7px rgba(0,0,0,0.95);
+    -webkit-box-shadow: 9px 9px 14px -7px rgba(0,0,0,0.95);
+    -moz-box-shadow: 9px 9px 14px -7px rgba(0,0,0,0.95);
+
+    height: 50rem;
+
+    /* FLEX */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section img {
+    width: 50rem;
+    border-radius: 5px;
+    border: 5px solid rgba(255, 217, 0, 0.625);
+}
+
+
+section button {
+    border-radius: 5px;
+    background-color: rgba(255, 217, 0, 0.625);
+    width: 10rem;
+    height: 3rem;
+    margin: 1rem;
+    cursor: pointer;
+    -webkit-box-shadow: inset -1px 3px 8px 5px #1F87FF, 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0,0,0,0); 
+box-shadow: inset -1px 3px 8px 5px #1F87FF, 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+
+
+
+/******************************************FOOTER******************************************/
+
+footer {
+    padding-top: 2rem;
+    background-color: rgba(255, 217, 0, 0.625);
+    text-align: center;
+    grid-area: footer;
+}
+
+footer ul li {
+    display: inline-block;
+    margin: 3rem;
+}
+
+
+
+/**************************************GRID AREAS INDEX**************************************/
+
+.sectionA {
+    grid-area: sectionA;
+}
+
+.sectionB {
+    grid-area: sectionB;
+
+}
+
+.sectionC {
+    grid-area: sectionC;
+    
+}
+
+.sectionD {
+    grid-area: sectionD;
+    
+}
+
+
+.gridPadre {
+    display: grid;
+    grid-template-areas:
+    "header header header header"
+    "nav nav nav nav"
+    "sectionA sectionA sectionA sectionA"
+    "sectionB sectionB sectionB sectionB"
+    "sectionC sectionC sectionC sectionC"
+    "sectionD sectionD sectionD sectionD"
+    "footer footer footer footer";
+}
+
+
+
+/***************************************VISTA TABLET INDEX***************************************/
+
+@media (min-width:768px) and (max-width:1200px) {
+    .gridPadre {
+        display: grid;
+        grid-template-areas: 
+        "header header"
+        "nav nav"
+        "sectionA sectionB"
+        "sectionC sectionD"
+        "footer footer";
+    }
+
+    section {
+        text-align: center;
+    }
+
+    section img {
+        width: 300px;
+    }
+
+}
+
+
+/*****************************************VISTA MOBIL INDEX*****************************************/
+
+@media (max-width:480px) {
+    .gridPadre {
+        display: grid;
+        grid-template-areas: 
+        "header"
+        "nav"
+        "sectionA"
+        "sectionB"
+        "sectionC"
+        "sectionD"
+        "footer";
+    }
+
+    html {
+        font-size: 70%;
+    }
+
+    nav {
+        position: static;
+    }
+
+    .encabezado div {
+        max-width: 90%;
+    }
+
+    section {
+        text-align: center;
+    }
+
+    section img {
+        width: 400px;
+    }
+}
+
+
+
+/*----------------------------------------HISTORIA---------------------------------------*/
+
+/**************************************** *SECTION******************************************/
+
+.imgSurf {
+    width: 40rem;
+}
+
+.histB img {
+    width: 42rem;
+}
+
+.histC img {
+    margin: 2rem;
+    width: 40rem;
+}
+
+.histD img {
+    width: 50rem;
+}
+
+.histE img {
+    width: 50rem;
+}
+
+.histF img {
+    width: 30rem;
+    
+}
+
+
+/* ***************************************GRID AREAS HISTORIA****************************************/
+
+.histA {
+    grid-area: histA;
+}
+
+.histB{
+    grid-area: histB;
+
+}
+
+.histC {
+    grid-area: histC;
+    
+}
+
+.histD {
+    grid-area: histD;
+    
+}
+
+.histE {
+    grid-area: histE;
+    
+}
+
+.histF {
+    grid-area: histF;
+    
+}
+
+
+
+
+.gridHistoria {
+    display: grid;
+    grid-template-areas:
+    "header header header header"
+    "nav nav nav nav"
+    "histaA histA histB histB"
+    "histC histC histD histD"
+    "histE histE histF histF"
+    "footer footer footer footer"
+    ;
+}
+
+
+
+
+/* ***************************************VISTA TABLET HISTORIA ****************************************/
+
+@media (min-width:768px) and (max-width:1200px) {
+    .gridHistoria {
+        display: grid;
+        grid-template-areas: 
+        "header header"
+        "nav nav"
+        "histA histB"
+        "histC histD"
+        "histE histF"
+        "footer footer";
+    }
+
+   
+    .histF img {
+        width: 30rem;
+
+    }
+
+}
+
+
+/******************************************VISTA MOBIL HISTORIA***********************************************/
+
+ @media (max-width:480px) {
+    .gridHistoria {
+        display: grid;
+        grid-template-areas: 
+        "header"
+        "nav"
+        "histA"
+        "histB"
+        "histC"
+        "histD"
+        "histE"
+        "histF"
+        "footer";
+    }
+
+    html {
+        font-size: 60%;
+    }
+
+    nav {
+        position: static;
+    }
+
+    .histF img {
+        width: 300px;
+    }
+
+
+    .histC img {
+        width: 320px;
+    }
+}
+
+ 
+
+
+
+
